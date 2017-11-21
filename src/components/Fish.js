@@ -6,7 +6,7 @@ class Fish extends React.Component {
     const { details, index } = this.props;
     const isAvailable = details.status === 'available';
     const buttonText = isAvailable ? 'Add To Order' : 'Sold Out!';
-    
+
     return (
       <li className="menu-fish">
         <img src={details.image} alt={details.name} />
@@ -20,6 +20,12 @@ class Fish extends React.Component {
       </li>
     )
   };
+}
+
+Fish.proptypes = {
+  details: React.PropTypes.object.isRequired,
+  index: React.PropTypes.string.isRequired,
+  addToOrder: React.PropTypes.func.isRequired
 }
 
 export default Fish;
